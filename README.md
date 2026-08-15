@@ -1,61 +1,51 @@
-# AI Customer Support & Voice-of-Customer Intelligence
+# Automated AI Support Workflow
 
-An AI-assisted customer support analytics project that turns support tickets into sentiment, pain-point, resolution and satisfaction insights.
+## What this does
 
-## Business Objective
-Identify recurring customer pain points, sentiment patterns, operational bottlenecks and opportunities to improve support quality and customer experience.
+This workflow turns raw customer-support tickets into structured operational signals with minimal manual effort.
 
-## Tech Stack
-- SQL
-- Python / Pandas
-- Sentiment analytics
-- Voice-of-Customer analytics
-- Support operations analytics
-- BI dashboard concepts
-- Generative AI as analytical copilot
-- GitHub
+```text
+Support Ticket
+      ↓
+Intent Classification
+      ↓
+Sentiment Scoring
+      ↓
+Priority Scoring
+      ↓
+AI-style Summary
+      ↓
+Recommended Action
+      ↓
+Human Review Flag
+      ↓
+CSV / Dashboard
+```
 
-## Dataset
-- 12,000 synthetic support tickets
-- January 2025 to June 2026
-- Channels, products, issue types, sentiment, priority, resolution and CSAT
-- Synthetic data is clearly labeled for portfolio use
+## Run
 
-## KPIs
-- Tickets: 12,000
-- Negative sentiment: 45.8%
-- Average resolution time: 34.1 hours
-- Average CSAT: 3.21/5
-- Escalation rate: 3.9%
+From the project root:
 
-## Key Findings
-- Highest customer pain point by negative sentiment: App Bug
-- Channel requiring attention: Email
-- Product with highest negative-sentiment rate: Mobile App
+```bash
+python ai-workflow/ai_support_workflow.py
+```
 
-## AI-Assisted Workflow
-Generative AI was used as an analytical copilot for data profiling, SQL generation, sentiment/pain-point interpretation, KPI selection and business recommendations. Metrics were programmatically validated.
+The workflow reads:
 
-## How Generative AI Could Be Applied
-- Ticket summarization
-- Intent classification
-- Root-cause theme extraction
-- Agent-assist response drafting
-- Priority triage support
-- VoC trend summarization
+`data/support_tickets.csv`
 
-Human review is required for customer-facing decisions.
+and creates:
 
-## Dashboard Preview
-![Support VoC Dashboard](support_voc_dashboard_preview.png)
+`ai-workflow/ai_workflow_output.csv`
 
-## Business Value
-Relevant to AI Business Analyst, Data Analyst, Business Analyst, Customer Analytics, CX Analytics, Product Analytics and Operations Analytics roles.
+## Why this is portfolio-relevant
 
-## Future Enhancements
-- Real NLP sentiment model
-- Topic modeling / clustering
-- LLM-based ticket summarization
-- Real-time agent-assist workflow
-- Power BI dashboard
-- SLA breach prediction
+The workflow demonstrates how an analyst can automate repetitive analysis while keeping human judgment for high-impact customer decisions.
+
+## AI/Automation Positioning
+
+The current implementation is API-free and reproducible. The summary and recommendation functions are deliberately isolated so they can later be replaced with an LLM/API call without changing the rest of the pipeline.
+
+## Human-in-the-loop
+
+Negative or high-priority cases are flagged for human review. The automation is designed to assist analysts/agents rather than make unsupervised customer-facing decisions.
